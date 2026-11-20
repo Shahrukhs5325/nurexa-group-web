@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUREXA Group | Affordable Custom Software, Web, Mobile &amp; Billing Solutions</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Michroma for futuristic industrial display + Space Grotesk & Inter for clean modern UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Michroma&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlack: '#09090B',
+                        charcoal: '#121215',
+                        charcoalLight: '#1A1A1F',
+                        champagne: '#E6CB97',
+                        champagneDark: '#C8AB74',
+                        ivory: '#FAF8F5',
+                        mutedSilver: '#9A9893'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                        logo: ['Michroma', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Smooth Animations & Scroll Reveal Transitions */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        @keyframes pulseGlow {
+
+            0%,
+            100% {
+                opacity: 0.35;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.65;
+                transform: scale(1.06);
+            }
+        }
+
+        .animate-pulse-glow {
+            animation: pulseGlow 7s ease-in-out infinite;
+        }
+
+        @keyframes floatSlow {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .animate-float {
+            animation: floatSlow 5s ease-in-out infinite;
+        }
+
+        /* Subtle Custom Scrollbar for Code Snippet */
+        pre::-webkit-scrollbar {
+            height: 6px;
+            width: 6px;
+        }
+
+        pre::-webkit-scrollbar-track {
+            background: #09090B;
+        }
+
+        pre::-webkit-scrollbar-thumb {
+            background: #2A2A32;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-deepBlack text-ivory font-sans antialiased selection:bg-champagne selection:text-deepBlack overflow-x-hidden">
+
+    <!-- Ambient Top Spotlight Lighting -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div
+            class="absolute -top-40 left-1/2 -translate-x-1/2 w-[920px] h-[520px] rounded-full bg-champagne/[0.045] blur-[140px] animate-pulse-glow">
+        </div>
+    </div>
+
+    <!-- Sticky Glassmorphic Corporate Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-deepBlack/85 backdrop-blur-md border-b border-white/[0.07]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
+
+            <!-- Brand Logo (Crisp Inline Vector SVG Replica of Option 3) -->
+            <a href="#" class="flex items-center gap-3.5 group focus:outline-none" aria-label="NUREXA Group Home">
+                <svg class="w-10 h-11 shrink-0 transition-transform duration-300 group-hover:scale-105"
+                    viewBox="0 0 100 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 22 L12 96 L32 80 L32 54 L66 86 L66 36 L80 24 L80 96 L90 104 L90 10 L56 38 L56 64 L22 32 L22 74 L12 82 Z"
+                        fill="#E6CB97" />
+                    <path d="M26 14 L52 38 L52 50 L26 26 Z" fill="#E6CB97" />
+                </svg>
+                <div class="flex flex-col justify-center">
+                    <span class="font-logo text-ivory text-lg sm:text-xl tracking-[0.14em] leading-none font-bold">
+                        NUREXA
+                    </span>
+                    <span
+                        class="font-logo text-champagne text-[9px] sm:text-[10px] tracking-[0.46em] leading-none mt-1.5 pl-0.5 font-semibold">
+                        GROUP
+                    </span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-mutedSilver">
+                <a href="#services" class="hover:text-ivory transition-colors duration-200">Solutions</a>
+                <a href="#industries" class="hover:text-ivory transition-colors duration-200">Industries</a>
+                <a href="#why-software" class="hover:text-ivory transition-colors duration-200">Why Custom</a>
+                <a href="#solutions" class="hover:text-ivory transition-colors duration-200">Packages</a>
+                <a href="#faq" class="hover:text-ivory transition-colors duration-200">FAQ</a>
+                <a href="#contact" class="hover:text-ivory transition-colors duration-200">Contact</a>
+            </nav>
+
+            <!-- CTA & Mobile Menu Toggle -->
+            <div class="flex items-center gap-4">
+                <a href="#contact"
+                    class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-champagne text-deepBlack font-display font-semibold text-xs uppercase tracking-wider hover:bg-ivory transition-all duration-300 shadow-lg shadow-champagne/10">
+                    Get Free Quote
+                </a>
+                <button id="mobile-menu-btn"
+                    class="lg:hidden p-2.5 rounded-lg bg-charcoal border border-white/10 text-ivory hover:border-champagne/50 focus:outline-none"
+                    aria-label="Toggle Menu">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-charcoal border-b border-white/10 px-6 py-5 space-y-4">
+            <a href="#services" class="block text-sm font-medium text-mutedSilver hover:text-ivory py-1">Solutions</a>
+            <a href="#industries"
+                class="block text-sm font-medium text-mutedSilver hover:text-ivory py-1">Industries</a>
+            <a href="#why-software" class="block text-sm font-medium text-mutedSilver hover:text-ivory py-1">Why Custom
+                Software</a>
+            <a href="#solutions" class="block text-sm font-medium text-mutedSilver hover:text-ivory py-1">Packages</a>
+            <a href="#faq" class="block text-sm font-medium text-mutedSilver hover:text-ivory py-1">FAQ</a>
+            <a href="#contact" class="block text-sm font-medium text-mutedSilver hover:text-ivory py-1">Contact</a>
+            <a href="#contact"
+                class="block w-full text-center px-5 py-3 rounded-lg bg-champagne text-deepBlack font-display font-semibold text-xs uppercase tracking-wider">
+                Start Your Project
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative z-10 pt-16 pb-24 lg:pt-28 lg:pb-32 border-b border-white/[0.06]">
+        <!-- Subtle Architectural Grid Lines -->
+        <div
+            class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_75%_65%_at_50%_40%,#000_60%,transparent_100%)] pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+
+                <!-- Left Column: Persuasive Value Proposition -->
+                <div class="lg:col-span-7 space-y-7 reveal active">
+                    <div
+                        class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-charcoal border border-champagne/30 text-champagne text-xs font-medium tracking-widest uppercase">
+                        <span class="w-1.5 h-1.5 rounded-full bg-champagne animate-ping"></span>
+                        Custom Software Built Exactly How You Want
+                    </div>
+
+                    <h1
+                        class="font-display text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-ivory leading-[1.12]">
+                        Enterprise-Grade Custom Software. <span class="text-champagne">Built Affordably</span> for Your
+                        Business.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-mutedSilver max-w-2xl leading-relaxed font-light">
+                        From fast static websites and custom web applications to Android/iOS mobile apps, Windows
+                        desktop software, and multi-store billing &amp; inventory systems—we engineer tailored digital
+                        solutions that fit your budget and workflow.
+                    </p>
+
+                    <!-- Key Highlights Pill Strip -->
+                    <div class="flex flex-wrap gap-2.5 pt-1">
+                        <span
+                            class="px-3 py-1.5 rounded-lg bg-charcoal border border-white/[0.08] text-xs text-ivory font-medium flex items-center gap-1.5">
+                            <span class="text-champagne">✦</span> 100% Custom-Built
+                        </span>
+                        <span
+                            class="px-3 py-1.5 rounded-lg bg-charcoal border border-white/[0.08] text-xs text-ivory font-medium flex items-center gap-1.5">
+                            <span class="text-champagne">✦</span> Online &amp; Offline Support
+                        </span>
+                        <span
+                            class="px-3 py-1.5 rounded-lg bg-charcoal border border-white/[0.08] text-xs text-ivory font-medium flex items-center gap-1.5">
+                            <span class="text-champagne">✦</span> Affordable Pricing
+                        </span>
+                        <span
+                            class="px-3 py-1.5 rounded-lg bg-charcoal border border-white/[0.08] text-xs text-ivory font-medium flex items-center gap-1.5">
+                            <span class="text-champagne">✦</span> Lifetime Ownership Options
+                        </span>
+                    </div>
+
+                    <!-- Dual CTAs -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3">
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-champagne text-deepBlack font-display font-semibold text-sm tracking-wide hover:bg-ivory transition-all duration-300 shadow-lg shadow-champagne/15">
+                            Request a Free Quote
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </a>
+                        <a href="#services"
+                            class="inline-flex items-center justify-center px-7 py-4 rounded-xl bg-charcoal border border-white/10 text-ivory font-display font-medium text-sm tracking-wide hover:border-champagne/50 hover:bg-charcoalLight transition-all duration-300">
+                            Explore Solutions
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Multi-Platform & POS Dashboard Showcase -->
+                <div class="lg:col-span-5 reveal reveal-delay-2 active">
+                    <div
+                        class="relative rounded-2xl bg-charcoal border border-white/[0.09] p-6 sm:p-7 shadow-2xl overflow-hidden animate-float">
+                        <!-- Curated Dark Tech Workspace Background Image with Luxury Overlay -->
+                        <div class="relative h-44 rounded-xl overflow-hidden mb-6 border border-white/[0.08]">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80"
+                                onerror="this.onerror=null;this.src='https://placehold.co/900x400/121215/E6CB97?text=NUREXA+Business+Suite';"
+                                alt="NUREXA Multi-Store Analytics & Billing Software Interface"
+                                class="w-full h-full object-cover opacity-55">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-deepBlack via-deepBlack/50 to-transparent">
+                            </div>
+                            <div class="absolute bottom-3.5 left-4 right-4 flex items-center justify-between">
+                                <div>
+                                    <span
+                                        class="text-[10px] font-mono uppercase tracking-widest text-champagne block">NUREXA
+                                        OMNI-SUITE v4.2</span>
+                                    <span class="text-sm font-display font-semibold text-ivory">Multi-Store POS &amp;
+                                        Cloud Sync</span>
+                                </div>
+                                <span
+                                    class="px-2.5 py-1 rounded-md bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-[11px] font-medium">
+                                    ● Online + Offline Ready
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Simulated Live Business Metrics Widget -->
+                        <div class="grid grid-cols-3 gap-3 mb-5">
+                            <div class="p-3.5 rounded-xl bg-deepBlack border border-white/[0.06]">
+                                <span class="text-[10px] text-mutedSilver uppercase block">Today's Billing</span>
+                                <span
+                                    class="font-display text-base sm:text-lg font-bold text-champagne mt-1 block">₹1,48,920</span>
+                                <span class="text-[10px] text-emerald-400">+18.4% vs avg</span>
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-deepBlack border border-white/[0.06]">
+                                <span class="text-[10px] text-mutedSilver uppercase block">Active Branches</span>
+                                <span class="font-display text-base sm:text-lg font-bold text-ivory mt-1 block">04
+                                    Stores</span>
+                                <span class="text-[10px] text-champagne">Live Stock Sync</span>
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-deepBlack border border-white/[0.06]">
+                                <span class="text-[10px] text-mutedSilver uppercase block">Low Stock Alert</span>
+                                <span class="font-display text-base sm:text-lg font-bold text-ivory mt-1 block">03
+                                    Items</span>
+                                <span class="text-[10px] text-amber-300">Auto-Reorder</span>
+                            </div>
+                        </div>
+
+                        <!-- Platform Compatibility Bar -->
+                        <div
+                            class="pt-4 border-t border-white/[0.07] flex items-center justify-between text-xs text-mutedSilver">
+                            <span>Supported Platforms:</span>
+                            <div class="flex items-center gap-2 text-ivory font-medium">
+                                <span class="px-2 py-0.5 rounded bg-deepBlack border border-white/10">Web</span>
+                                <span class="px-2 py-0.5 rounded bg-deepBlack border border-white/10">Android</span>
+                                <span class="px-2 py-0.5 rounded bg-deepBlack border border-white/10">iOS</span>
+                                <span
+                                    class="px-2 py-0.5 rounded bg-deepBlack border border-champagne/40 text-champagne">Windows</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics & Enterprise Trust Bar -->
+    <section class="relative z-10 bg-charcoal/80 border-b border-white/[0.07] py-10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center lg:text-left">
+                <div class="p-4 rounded-xl bg-deepBlack/60 border border-white/[0.05] reveal">
+                    <div class="font-display text-2xl sm:text-3xl font-bold text-champagne">
+                        <span class="kpi-counter" data-target="100">0</span>%
+                    </div>
+                    <div class="text-xs sm:text-sm font-medium text-ivory mt-1">Custom-Built Workflow</div>
+                    <p class="text-[11px] text-mutedSilver mt-0.5">Designed around your exact business rules</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-deepBlack/60 border border-white/[0.05] reveal reveal-delay-1">
+                    <div class="font-display text-2xl sm:text-3xl font-bold text-ivory">
+                        &lt; <span class="kpi-counter" data-target="14">0</span> Days
+                    </div>
+                    <div class="text-xs sm:text-sm font-medium text-champagne mt-1">Rapid Go-Live Delivery</div>
+                    <p class="text-[11px] text-mutedSilver mt-0.5">Fast prototype-to-deployment turnaround</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-deepBlack/60 border border-white/[0.05] reveal reveal-delay-2">
+                    <div class="font-display text-2xl sm:text-3xl font-bold text-champagne">
+                        <span class="kpi-counter" data-target="24">0</span>/7
+                    </div>
+                    <div class="text-xs sm:text-sm font-medium text-ivory mt-1">Offline + Cloud Auto-Sync</div>
+                    <p class="text-[11px] text-mutedSilver mt-0.5">Uninterrupted billing even without internet</p>
+                </div>
+
+                <div class="p-4 rounded-xl bg-deepBlack/60 border border-white/[0.05] reveal reveal-delay-3">
+                    <div class="font-display text-2xl sm:text-3xl font-bold text-ivory">
+                        <span class="kpi-counter" data-target="0">0</span>%
+                    </div>
+                    <div class="text-xs sm:text-sm font-medium text-champagne mt-1">Forced Monthly Bloat</div>
+                    <p class="text-[11px] text-mutedSilver mt-0.5">Transparent pricing &amp; lifetime license options
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Services Section -->
+    <section id="services" class="relative z-10 py-24 lg:py-32 border-b border-white/[0.06]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 reveal">
+                <div>
+                    <p class="text-champagne text-xs font-semibold uppercase tracking-[0.25em] mb-3">01 // Complete
+                        Software Engineering</p>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-ivory tracking-tight">
+                        Tailored Software Solutions — Built Exactly How You Want
+                    </h2>
+                </div>
+                <p class="text-mutedSilver text-sm sm:text-base max-w-md leading-relaxed">
+                    Whether you need a sleek local business website, an offline Windows billing desktop app, or a
+                    multi-branch mobile ERP, we craft every feature around your operations.
+                </p>
+            </div>
+
+            <!-- 8-Card Comprehensive Solutions Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Card 1: Static & Dynamic Business Websites -->
+                <div
+                    class="group rounded-2xl bg-charcoal border border-white/[0.07] p-7 hover:border-champagne/45 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between reveal">
+                    <div>
+                        <div
+                            class="w-11 h-11 rounded-xl bg-deepBlack border border-champagne/30 flex items-center justify-center text-champagne mb-6">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="font-display text-lg font-semibold text-ivory mb-2.5 group-hover:text-champagne transition-colors">
+                            Static &amp; Dynamic Websites
+                        </h3>
+                        <p class="text-mutedSilver text-sm leading-relaxed mb-5">
+                            Ultra-fast corporate websites, product catalogs, and SEO-optimized local business sites that
+                            build instant customer credibility online.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/[0.06] text-[11px] font-mono text-champagne">
+                        Mobile-First • Fast Load • SEO Ready
+                    </div>
+                </div>
+
+                <!-- Card 2: Custom Web Applications -->
+                <div
+                    class="group rounded-2xl bg-charcoal border border-white/[0.07] p-7 hover:border-champagne/45 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between reveal reveal-delay-1">
+                    <div>
+                        <div
+                            class="w-11 h-11 rounded-xl bg-deepBlack border border-champagne/30 flex items-center justify-center text-champagne mb-6">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="font-display text-lg font-semibold text-ivory mb-2.5 group-hover:text-champagne transition-colors">
+                            Custom Web Applications
+                        </h3>
+                        <p class="text-mutedSilver text-sm leading-relaxed mb-5">
+                            Browser-accessible cloud ERP, CRM dashboards, appointment booking portals, and custom admin
+                            panels accessible from any device.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/[0.06] text-[11px] font-mono text-champagne">
+                        Cloud ERP • Custom CRM • Role Access
+                    </div>
+                </div>
+
+                <!-- Card 3: Mobile Apps (Android & iOS) -->
+                <div
+                    class="group rounded-2xl bg-charcoal border border-white/[0.07] p-7 hover:border-champagne/45 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between reveal reveal-delay-2">
+                    <div>
+                        <div
+                            class="w-11 h-11 rounded-xl bg-deepBlack border border-champagne/30 flex items-center justify-center text-champagne mb-6">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="font-display text-lg font-semibold text-ivory mb-2.5 group-hover:text-champagne transition-colors">
+                            Android &amp; iOS Mobile Apps
+                        </h3>
+                        <p class="text-mutedSilver text-sm leading-relaxed mb-5">
+                            Smooth customer ordering apps, owner live-reporting apps, delivery tracking, and field-sales
+                            force apps for Play Store &amp; App Store.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/[0.06] text-[11px] font-mono text-champagne">
+                        Android • iOS • Push Notifications
+                    </div>
+                </div>
+
+                <!-- Card 4: Windows Desktop & Offline Apps -->
+                <div
+                    class="group rounded-2xl bg-charcoal border border-white/[0.07] p-7 hover:border-champagne/45 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between reveal reveal-delay-3">
+                    <div>
+                        <div
+                            class="w-11 h-11 rounded-xl bg-deepBlack border border-champagne/30 flex items-center justify-center text-champagne mb-6">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="font-display text-lg font-semibold text-ivory mb-2.5 group-hover:text-champagne transition-colors">
+                            Windows Desktop &amp; Offline Apps
+                        </h3>
+                        <p class="text-mutedSilver text-sm leading-relaxed mb-5">
+                            Zero-internet desktop software for counters and warehouses. Works 100% offline with local
+                            database security and auto cloud backup when online.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/[0.06] text-[11px] font-mono text-champagne">
+                        100% Offline Ready • Hybrid Cloud Sync
+                    </div>
+                </div>
+
+                <!-- Card 5: Billing, POS & GST Invoicing -->
+                <div
+                    class="group rounded-2xl bg-charcoal border border-white/[0.07] p-7 hover:border-champagne/45 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between reveal">
+                    <div>
+                        <div
+                            class="w-11 h-11 rounded-xl bg-deepBlack border border-champagne/30 flex items-center justify-center text-champagne mb-6">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                    d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="font-display text-lg font-semibold text-ivory mb-2.5 group-hover:text-champagne transition-colors">
+                            Billing, POS &amp; GST Invoicing
+                        </h3>
+                        <p class="text-mutedSilver text-sm leading-relaxed mb-5">
+                            3-second barcode checkout, thermal &amp; A4 invoice printing, GST/tax compliance, split
+                            payments (UPI/Cash/Card), and credit/khata ledger tracking.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/[0.06] text-[11px] font-mono text-champagne">
+                        Thermal Print • Barcode • GST Reports
+                    </div>
+                </div>
+
+                <!-- Card 6: Inventory & Multi-Store Management -->
+                <div
+                    class="group rounded-2xl bg-charcoal border border-white/[0.07] p-7 hover:border-champagne/45 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between reveal reveal-delay-1">
+                    <div>
+                        <div
+                            class="w-11 h-11 rounded-xl bg-deepBlack border border-champagne/30 flex items-center justify-center text-champagne mb-6">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="font-display text-lg font-semibold text-ivory mb-2.5 group-hover:text-champagne transition-colors">
+                            Inventory &amp; Multi-Store Sync
+                        </h3>
+                        <p class="text-mutedSilver text-sm leading-relaxed mb-5">
+                            Manage multiple branches and godowns from one master dashboard. Track batch expiry,
+                            inter-store stock transfers, suppliers, and low-stock alerts.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/[0.06] text-[11px] font-mono text-champagne">
+                        Multi-Branch • Warehouse • Stock Alerts
+                    </div>
+                </div>
+
+                <!-- Card 7: Suggested Addition - WhatsApp & SMS Automation -->
+                <div
+                    class="group rounded-2xl bg-charcoal border border-white/[0.07] p-7 hover:border-champagne/45 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between reveal reveal-delay-2">
+                    <div>
+                        <div
+                            class="w-11 h-11 rounded-xl bg-deepBlack border border-champagne/30 flex items-center justify-center text-champagne mb-6">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="font-display text-lg font-semibold text-ivory mb-2.5 group-hover:text-champagne transition-colors">
+                            WhatsApp Billing &amp; Owner Alerts
+                        </h3>
+                        <p class="text-mutedSilver text-sm leading-relaxed mb-5">
+                            Send digital PDF invoices directly to customers' WhatsApp, automate payment due reminders,
+                            and receive daily closing profit summaries on your phone.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/[0.06] text-[11px] font-mono text-champagne">
+                        Digital Receipts • Auto Reminders
+                    </div>
+                </div>
+
+                <!-- Card 8: Suggested Addition - Industry-Specific Modules -->
+                <div
+                    class="group rounded-2xl bg-charcoal border border-white/[0.07] p-7 hover:border-champagne/45 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between reveal reveal-delay-3">
+                    <div>
+                        <div
+                            class="w-11 h-11 rounded-xl bg-deepBlack border border-champagne/30 flex items-center justify-center text-champagne mb-6">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                        </div>
+                        <h3
+                            class="font-display text-lg font-semibold text-ivory mb-2.5 group-hover:text-champagne transition-colors">
+                            Industry-Tailored Software
+                        </h3>
+                        <p class="text-mutedSilver text-sm leading-relaxed mb-5">
+                            Custom workflows for Retail Supermarkets, Restaurants &amp; Cafes (KOT), Medical/Pharmacies,
+                            Garments, Salons, Clinics, and Wholesale Distributors.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-white/[0.06] text-[11px] font-mono text-champagne">
+                        Retail • Pharmacy • Restaurant • Wholesale
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Industry-Specific Modules Showcase -->
+    <section id="industries" class="relative z-10 py-24 lg:py-28 bg-charcoal/40 border-b border-white/[0.06]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+                <p class="text-champagne text-xs font-semibold uppercase tracking-[0.25em] mb-3">02 // Built For Every
+                    Sector</p>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-ivory tracking-tight mb-4">
+                    Industry-Specific Modules Ready to Customize
+                </h2>
+                <p class="text-mutedSilver text-sm sm:text-base">
+                    Select your business category below to see how NUREXA Group customizes billing, inventory, and
+                    customer workflows for your exact industry.
+                </p>
+            </div>
+
+            <!-- Interactive Industry Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2.5 mb-10 reveal" id="industry-tabs">
+                <button type="button" data-industry="retail"
+                    class="industry-tab active px-5 py-2.5 rounded-xl bg-champagne text-deepBlack font-display font-semibold text-xs uppercase tracking-wider transition-all">
+                    Retail &amp; Supermarkets
+                </button>
+                <button type="button" data-industry="pharmacy"
+                    class="industry-tab px-5 py-2.5 rounded-xl bg-charcoal border border-white/10 text-mutedSilver hover:text-ivory font-display font-semibold text-xs uppercase tracking-wider transition-all">
+                    Medical &amp; Pharmacy
+                </button>
+                <button type="button" data-industry="restaurant"
+                    class="industry-tab px-5 py-2.5 rounded-xl bg-charcoal border border-white/10 text-mutedSilver hover:text-ivory font-display font-semibold text-xs uppercase tracking-wider transition-all">
+                    Restaurants &amp; Cafes
+                </button>
+                <button type="button" data-industry="salon"
+                    class="industry-tab px-5 py-2.5 rounded-xl bg-charcoal border border-white/10 text-mutedSilver hover:text-ivory font-display font-semibold text-xs uppercase tracking-wider transition-all">
+                    Salons, Clinics &amp; Services
+                </button>
+                <button type="button" data-industry="wholesale"
+                    class="industry-tab px-5 py-2.5 rounded-xl bg-charcoal border border-white/10 text-mutedSilver hover:text-ivory font-display font-semibold text-xs uppercase tracking-wider transition-all">
+                    Wholesale &amp; Manufacturing
+                </button>
+            </div>
+
+            <!-- Dynamic Industry Showcase Card -->
+            <div class="rounded-2xl bg-deepBlack border border-white/[0.09] p-7 sm:p-10 shadow-2xl reveal">
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-5">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-champagne/15 text-champagne text-xs font-mono font-semibold"
+                            id="ind-badge">
+                            RETAIL &amp; SUPERMARKET EDITION
+                        </div>
+                        <h3 class="font-display text-2xl sm:text-3xl font-bold text-ivory" id="ind-title">
+                            High-Speed Barcode Billing, Loyalty Points &amp; Multi-Counter POS
+                        </h3>
+                        <p class="text-mutedSilver text-sm sm:text-base leading-relaxed" id="ind-desc">
+                            Handle peak evening queues effortlessly with 3-second barcode scanning, weighing scale
+                            integration, combo offers, customer khata management, and live godown-to-shelf stock
+                            replenishment.
+                        </p>
+                        <div class="grid sm:grid-cols-2 gap-3 pt-2" id="ind-features">
+                            <div
+                                class="flex items-center gap-2.5 text-sm text-ivory/90 bg-charcoal/80 p-3 rounded-xl border border-white/[0.05]">
+                                <span class="text-champagne font-bold">✓</span> Instant Barcode Label &amp; Thermal
+                                Print
+                            </div>
+                            <div
+                                class="flex items-center gap-2.5 text-sm text-ivory/90 bg-charcoal/80 p-3 rounded-xl border border-white/[0.05]">
+                                <span class="text-champagne font-bold">✓</span> Split UPI / Cash / Card Checkout
+                            </div>
+                            <div
+                                class="flex items-center gap-2.5 text-sm text-ivory/90 bg-charcoal/80 p-3 rounded-xl border border-white/[0.05]">
+                                <span class="text-champagne font-bold">✓</span> Auto Low-Stock &amp; Dead-Stock Alerts
+                            </div>
+                            <div
+                                class="flex items-center gap-2.5 text-sm text-ivory/90 bg-charcoal/80 p-3 rounded-xl border border-white/[0.05]">
+                                <span class="text-champagne font-bold">✓</span> Customer Loyalty &amp; WhatsApp Bills
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5">
+                        <div class="relative rounded-xl overflow-hidden border border-white/10 h-64 sm:h-72">
+                            <img id="ind-image"
+                                src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80"
+                                onerror="this.onerror=null;this.src='https://placehold.co/900x600/121215/E6CB97?text=NUREXA+Industry+Solution';"
+                                alt="NUREXA Industry Specific Software"
+                                class="w-full h-full object-cover opacity-75 transition-all duration-500">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-deepBlack via-deepBlack/30 to-transparent">
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                                <span class="text-xs font-mono text-champagne" id="ind-platform">Windows Offline +
+                                    Android Owner App</span>
+                                <a href="#contact"
+                                    class="px-3.5 py-2 rounded-lg bg-champagne text-deepBlack font-display font-semibold text-xs hover:bg-ivory transition-colors">
+                                    Book Free Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Educational Section: Why Every Local & Growing Business Needs Custom Software -->
+    <section id="why-software" class="relative z-10 py-24 lg:py-32 bg-charcoal/50 border-b border-white/[0.06]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+            <div class="grid lg:grid-cols-12 gap-12 items-center mb-16">
+                <div class="lg:col-span-6 space-y-5 reveal">
+                    <p class="text-champagne text-xs font-semibold uppercase tracking-[0.25em]">03 // Business
+                        Transformation</p>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-ivory tracking-tight leading-tight">
+                        Why Every Local &amp; Growing Business Needs Custom Software Today
+                    </h2>
+                    <p class="text-mutedSilver text-base leading-relaxed">
+                        Relying on paper registers, manual Excel sheets, or rigid off-the-shelf software silently drains
+                        profits through billing mistakes, untracked inventory shrinkage, and wasted hours. Custom
+                        software turns your daily operations into an automated growth engine.
+                    </p>
+                </div>
+
+                <!-- Curated Retail & Modern Business Photography Banner -->
+                <div class="lg:col-span-6 reveal reveal-delay-1">
+                    <div
+                        class="relative rounded-2xl overflow-hidden border border-white/[0.09] shadow-2xl h-64 sm:h-72">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80"
+                            onerror="this.onerror=null;this.src='https://placehold.co/1000x500/121215/E6CB97?text=Modern+Retail+POS+%26+Inventory';"
+                            alt="Business Owner Reviewing Real-Time Profit & Inventory Reports"
+                            class="w-full h-full object-cover opacity-65">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-deepBlack/90 via-deepBlack/45 to-transparent">
+                        </div>
+                        <div class="absolute bottom-6 left-6 right-6 max-w-md">
+                            <span
+                                class="px-2.5 py-1 rounded bg-champagne text-deepBlack text-[10px] font-bold uppercase tracking-wider">Real
+                                Business Impact</span>
+                            <p class="font-display text-lg sm:text-xl font-semibold text-ivory mt-2">
+                                "Businesses using automated billing &amp; inventory save 15+ hours weekly and prevent up
+                                to 12% stock loss."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6 Persuasive Reasons Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+
+                <div
+                    class="rounded-2xl bg-deepBlack border border-white/[0.08] p-7 hover:border-champagne/35 transition-colors reveal">
+                    <div class="text-champagne font-mono text-xs font-semibold mb-3">01 // ZERO LEAKAGE</div>
+                    <h3 class="font-display text-lg font-semibold text-ivory mb-2">Eliminate Billing Errors &amp; Stock
+                        Theft</h3>
+                    <p class="text-sm text-mutedSilver leading-relaxed">
+                        Every item scanned is automatically deducted from stock with accurate GST/discount
+                        calculation—stopping manual calculation errors and unaccounted inventory loss.
+                    </p>
+                </div>
+
+                <div
+                    class="rounded-2xl bg-deepBlack border border-white/[0.08] p-7 hover:border-champagne/35 transition-colors reveal reveal-delay-1">
+                    <div class="text-champagne font-mono text-xs font-semibold mb-3">02 // TIME FREEDOM</div>
+                    <h3 class="font-display text-lg font-semibold text-ivory mb-2">Save 3+ Hours Daily on Accounting
+                    </h3>
+                    <p class="text-sm text-mutedSilver leading-relaxed">
+                        Stop staying late to tally cash drawers and registers. Get instant daily sales, supplier dues,
+                        staff performance, and net profit reports in one click.
+                    </p>
+                </div>
+
+                <div
+                    class="rounded-2xl bg-deepBlack border border-white/[0.08] p-7 hover:border-champagne/35 transition-colors reveal reveal-delay-2">
+                    <div class="text-champagne font-mono text-xs font-semibold mb-3">03 // MULTI-BRANCH CONTROL</div>
+                    <h3 class="font-display text-lg font-semibold text-ivory mb-2">Scale From 1 Shop to Multiple Stores
+                    </h3>
+                    <p class="text-sm text-mutedSilver leading-relaxed">
+                        Whether you are at the counter or traveling, monitor live billing, cash collection, and
+                        warehouse inventory across all your branches from your smartphone.
+                    </p>
+                </div>
+
+                <div
+                    class="rounded-2xl bg-deepBlack border border-white/[0.08] p-7 hover:border-champagne/35 transition-colors reveal">
+                    <div class="text-champagne font-mono text-xs font-semibold mb-3">04 // UNSTOPPABLE COUNTER</div>
+                    <h3 class="font-display text-lg font-semibold text-ivory mb-2">Works Smoothly Even Without Internet
+                    </h3>
+                    <p class="text-sm text-mutedSilver leading-relaxed">
+                        Our hybrid offline-first architecture ensures your billing counter never freezes during Wi-Fi
+                        outages—automatically syncing data to the cloud once reconnected.
+                    </p>
+                </div>
+
+                <div
+                    class="rounded-2xl bg-deepBlack border border-white/[0.08] p-7 hover:border-champagne/35 transition-colors reveal reveal-delay-1">
+                    <div class="text-champagne font-mono text-xs font-semibold mb-3">05 // CUSTOMER LOYALTY</div>
+                    <h3 class="font-display text-lg font-semibold text-ivory mb-2">Build Trust &amp; Repeat Customer
+                        Visits</h3>
+                    <p class="text-sm text-mutedSilver leading-relaxed">
+                        Impress local customers with branded printed bills, instant WhatsApp receipts, loyalty reward
+                        points, and automated festival offers that bring buyers back.
+                    </p>
+                </div>
+
+                <div
+                    class="rounded-2xl bg-deepBlack border border-white/[0.08] p-7 hover:border-champagne/35 transition-colors reveal reveal-delay-2">
+                    <div class="text-champagne font-mono text-xs font-semibold mb-3">06 // AFFORDABLE &amp; CUSTOM</div>
+                    <h3 class="font-display text-lg font-semibold text-ivory mb-2">Pay Only For What Your Business Needs
+                    </h3>
+                    <p class="text-sm text-mutedSilver leading-relaxed">
+                        Avoid expensive recurring SaaS subscriptions packed with confusing unused features. Get clean,
+                        custom-built software tailored to your exact workflow at an affordable price.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Comparison Matrix: Manual / Generic SaaS vs. NUREXA Custom Software -->
+            <div class="rounded-2xl bg-deepBlack border border-white/[0.09] overflow-hidden shadow-2xl reveal">
+                <div
+                    class="px-6 py-5 bg-charcoal border-b border-white/[0.08] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <h3 class="font-display text-lg sm:text-xl font-bold text-ivory">Why Switch to NUREXA Custom
+                        Software?</h3>
+                    <span class="text-xs font-mono text-champagne">Side-by-Side Comparison</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse min-w-[640px]">
+                        <thead>
+                            <tr
+                                class="border-b border-white/[0.08] text-xs uppercase tracking-wider text-mutedSilver bg-charcoal/40">
+                                <th class="py-4 px-6">Business Factor</th>
+                                <th class="py-4 px-6">Paper / Excel Registers</th>
+                                <th class="py-4 px-6">Generic Ready-Made Apps</th>
+                                <th class="py-4 px-6 text-champagne font-bold">NUREXA Custom Software</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/[0.06] text-sm">
+                            <tr>
+                                <td class="py-4 px-6 font-medium text-ivory">Workflow Fit</td>
+                                <td class="py-4 px-6 text-mutedSilver">Slow &amp; error-prone</td>
+                                <td class="py-4 px-6 text-mutedSilver">Rigid; you adjust to app</td>
+                                <td class="py-4 px-6 text-champagne font-medium">100% Built to your exact rules</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 font-medium text-ivory">Internet Dependency</td>
+                                <td class="py-4 px-6 text-mutedSilver">Offline only (no backup)</td>
+                                <td class="py-4 px-6 text-mutedSilver">Stops if internet drops</td>
+                                <td class="py-4 px-6 text-champagne font-medium">Works 100% Offline + Auto Cloud Sync
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 font-medium text-ivory">Multi-Store &amp; Mobile View</td>
+                                <td class="py-4 px-6 text-mutedSilver">Impossible in real-time</td>
+                                <td class="py-4 px-6 text-mutedSilver">Expensive per-user add-ons</td>
+                                <td class="py-4 px-6 text-champagne font-medium">Live Owner App &amp; Multi-Branch Sync
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 font-medium text-ivory">Long-Term Cost</td>
+                                <td class="py-4 px-6 text-mutedSilver">Hidden losses from stock theft</td>
+                                <td class="py-4 px-6 text-mutedSilver">High yearly renewal fees forever</td>
+                                <td class="py-4 px-6 text-champagne font-medium">Affordable One-Time / Flexible
+                                    Ownership</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Affordable Flexible Packages / Solutions Section -->
+    <section id="solutions" class="relative z-10 py-24 lg:py-32 border-b border-white/[0.06]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <p class="text-champagne text-xs font-semibold uppercase tracking-[0.25em] mb-3">04 // Transparent &amp;
+                    Budget-Friendly</p>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-ivory tracking-tight mb-4">
+                    Flexible Solutions Built Around Your Budget
+                </h2>
+                <p class="text-mutedSilver text-sm sm:text-base leading-relaxed">
+                    Choose a ready-to-customize edition or request a 100% bespoke build. Select any plan below to
+                    pre-fill your free quote request.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Package 1 -->
+                <div
+                    class="rounded-2xl bg-charcoal border border-white/[0.08] p-7 flex flex-col justify-between hover:border-champagne/40 transition-all reveal">
+                    <div>
+                        <span class="text-xs font-mono text-champagne uppercase tracking-wider">Starter Digital</span>
+                        <h3 class="font-display text-xl font-bold text-ivory mt-2 mb-2">Business Website</h3>
+                        <p class="text-xs text-mutedSilver mb-5">Ideal for local shops, clinics, agencies &amp; service
+                            providers.</p>
+                        <div class="py-3 border-y border-white/[0.07] mb-5">
+                            <span class="text-xs text-mutedSilver block">Starting at</span>
+                            <span class="font-display text-2xl font-bold text-ivory">Affordable One-Time</span>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-ivory/85 mb-8">
+                            <li class="flex items-center gap-2"><span class="text-champagne">✓</span> Static or Dynamic
+                                Responsive Site</li>
+                            <li class="flex items-center gap-2"><span class="text-champagne">✓</span> Direct WhatsApp
+                                &amp; Call Integration</li>
+                            <li class="flex items-center gap-2"><span class="text-champagne">✓</span> Google Maps &amp;
+                                Local SEO Setup</li>
+                            <li class="flex items-center gap-2"><span class="text-champagne">✓</span> Fast Hosting &amp;
+                                SSL Security</li>
+                        </ul>
+                    </div>
+                    <button type="button" data-plan="Static / Dynamic Business Website"
+                        class="select-plan-btn w-full py-3 px-4 rounded-xl bg-deepBlack border border-white/15 text-ivory font-display font-semibold text-xs uppercase tracking-wider hover:bg-champagne hover:text-deepBlack hover:border-champagne transition-all">
+                        Get Website Quote
+                    </button>
+                </div>
+
+                <!-- Package 2 (Popular Highlight) -->
+                <div
+                    class="rounded-2xl bg-charcoal border-2 border-champagne/60 p-7 flex flex-col justify-between relative shadow-2xl shadow-champagne/5 reveal reveal-delay-1">
+                    <div
+                        class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-champagne text-deepBlack text-[10px] font-bold uppercase tracking-wider">
+                        Most Popular
+                    </div>
+                    <div>
+                        <span class="text-xs font-mono text-champagne uppercase tracking-wider">Retail &amp; Counter
+                            Pro</span>
+                        <h3 class="font-display text-xl font-bold text-ivory mt-2 mb-2">Billing &amp; Inventory App</h3>
+                        <p class="text-xs text-mutedSilver mb-5">Complete Windows offline or cloud POS billing for shops
+                            &amp; traders.</p>
+                        <div class="py-3 border-y border-white/[0.07] mb-5">
+                            <span class="text-xs text-mutedSilver block">Deployment</span>
+                            <span class="font-display text-2xl font-bold text-champagne">Offline + Online Sync</span>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-ivory/90 mb-8">
+                            <li class="flex items-center gap-2"><span class="text-champagne">✓</span> Fast Barcode &amp;
+                                GST Invoicing</li>
+                            <li class="flex items-center gap-2"><span class="text-champagne">✓</span> Real-Time Stock
+                                &amp; Expiry Alerts</li>
+                            <li class="flex items-center gap-2"><span class="text-champagne">✓</span> Customer Khata /
+                                Credit Ledger</li>
+                            <li class="flex items-center gap-2"><span class="text-champagne">✓</span> Thermal Printer
+                                &amp; WhatsApp Bill</li>
+                        </ul>
+                    </div>
+                    <button type="button" data-plan="Billing, POS & Inventory Software (Online/Offline)"
+                        class="select-plan-btn w-full py-3 px-4 rounded-xl bg-champagne text-deepBlack font-display font-semibold text-xs uppercase tracking-wider hover:bg-ivory transition-all">
+                        Get Billing Demo
+                    </button>
+                </div>
+
+                <!-- Package 3 -->
+                <div
+                    class="rounded-2xl bg-charcoal border border-white/[0.08] p-7 flex flex-col justify-between hover:border-champagne/40 transition-all reveal reveal-delay-2">
+                    <div>
+                        <span class="text-xs font-mono text-champagne uppercase tracking-wider">Growth &amp;
+                            Chains</span>
+                        <h3 class="font-display text-xl font-bold text-ivory mt-2 mb-2">Multi-Store ERP Suite</h3>
+                        <p class="text-xs text-mutedSilver mb-5">Centralized control for multiple retail branches,
+                            franchises &amp; warehouses.</p>
+                        <div class="py-3 border-y border-white/[0.07] mb-5">
+                            <span class="text-xs text-mutedSilver block">Architecture</span>
+                            <span class="font-display text-2xl font-bold text-ivory">Cloud + Mobile + PC</span>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-ivory/85 mb-8">
+                            <li class="flex items-center gap-2"><span class="text-champagne">✓</span> Unlimited Branch
+                                &amp; Godown Sync</li>
+                            <li class="flex items-center gap-2"><span class="text-champagne">✓</span> Inter-Store Stock
+                                Transfer &amp; Audit</li>
+                            <li class="flex items-center gap-2"><span class="text-champagne">✓</span> Owner Android/iOS
+                                Live Dashboard</li>
+                            <li class="flex items-center gap-2"><span class="text-champagne">✓</span> Staff Roles &amp;
+                                Permission Controls</li>
+                        </ul>
+                    </div>
+                    <button type="button" data-plan="Multi-Store & Warehouse ERP Software"
+                        class="select-plan-btn w-full py-3 px-4 rounded-xl bg-deepBlack border border-white/15 text-ivory font-display font-semibold text-xs uppercase tracking-wider hover:bg-champagne hover:text-deepBlack hover:border-champagne transition-all">
+                        Request Multi-Store Quote
+                    </button>
+                </div>
+
+                <!-- Package 4 -->
+                <div
+                    class="rounded-2xl bg-charcoal border border-white/[0.08] p-7 flex flex-col justify-between hover:border-champagne/40 transition-all reveal reveal-delay-3">
+                    <div>
+                        <span class="text-xs font-mono text-champagne uppercase tracking-wider">Bespoke
+                            Engineering</span>
+                        <h3 class="font-display text-xl font-bold text-ivory mt-2 mb-2">Custom Web / Mobile App</h3>
+                        <p class="text-xs text-mutedSilver mb-5">100% custom Android, iOS, Windows, or SaaS product
+                            built from scratch.</p>
+                        <div class="py-3 border-y border-white/[0.07] mb-5">
+                            <span class="text-xs text-mutedSilver block">Ownership</span>
+                            <span class="font-display text-2xl font-bold text-ivory">Full Source &amp; IP Rights</span>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-ivory/85 mb-8">
+                            <li class="flex items-center gap-2"><span class="text-champagne">✓</span> Native Android
+                                &amp; iOS Mobile Apps</li>
+                            <li class="flex items-center gap-2"><span class="text-champagne">✓</span> Custom Web Portals
+                                &amp; API Integrations</li>
+                            <li class="flex items-center gap-2"><span class="text-champagne">✓</span> Payment Gateway
+                                &amp; SMS/WhatsApp API</li>
+                            <li class="flex items-center gap-2"><span class="text-champagne">✓</span> Dedicated Support
+                                &amp; Maintenance</li>
+                        </ul>
+                    </div>
+                    <button type="button" data-plan="Custom Web / Android / iOS / Windows App"
+                        class="select-plan-btn w-full py-3 px-4 rounded-xl bg-deepBlack border border-white/15 text-ivory font-display font-semibold text-xs uppercase tracking-wider hover:bg-champagne hover:text-deepBlack hover:border-champagne transition-all">
+                        Discuss Custom Build
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4-Step Seamless Process Section -->
+    <section id="process" class="relative z-10 py-24 lg:py-28 bg-charcoal/40 border-b border-white/[0.06]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="max-w-2xl mb-14 reveal">
+                <p class="text-champagne text-xs font-semibold uppercase tracking-[0.25em] mb-3">05 // How We Work</p>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-ivory tracking-tight">
+                    From Your Idea to Live Software in 4 Simple Steps
+                </h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="rounded-2xl bg-deepBlack border border-white/[0.08] p-7 reveal">
+                    <span
+                        class="inline-block px-3 py-1 rounded-md bg-champagne/15 text-champagne font-mono text-xs font-bold mb-4">STEP
+                        01</span>
+                    <h3 class="font-display text-lg font-semibold text-ivory mb-2">Free Requirement Call</h3>
+                    <p class="text-sm text-mutedSilver leading-relaxed">Tell us about your business workflow, billing
+                        needs, or app idea in plain language—no technical jargon required.</p>
+                </div>
+
+                <div class="rounded-2xl bg-deepBlack border border-white/[0.08] p-7 reveal reveal-delay-1">
+                    <span
+                        class="inline-block px-3 py-1 rounded-md bg-champagne/15 text-champagne font-mono text-xs font-bold mb-4">STEP
+                        02</span>
+                    <h3 class="font-display text-lg font-semibold text-ivory mb-2">Prototype &amp; Fair Quote</h3>
+                    <p class="text-sm text-mutedSilver leading-relaxed">We design visual screen previews and share a
+                        clear, affordable fixed-price proposal with zero hidden charges.</p>
+                </div>
+
+                <div class="rounded-2xl bg-deepBlack border border-white/[0.08] p-7 reveal reveal-delay-2">
+                    <span
+                        class="inline-block px-3 py-1 rounded-md bg-champagne/15 text-champagne font-mono text-xs font-bold mb-4">STEP
+                        03</span>
+                    <h3 class="font-display text-lg font-semibold text-ivory mb-2">Custom Build &amp; Testing</h3>
+                    <p class="text-sm text-mutedSilver leading-relaxed">Our engineers build your web, mobile, or Windows
+                        offline software with regular progress demos for your feedback.</p>
+                </div>
+
+                <div class="rounded-2xl bg-deepBlack border border-white/[0.08] p-7 reveal reveal-delay-3">
+                    <span
+                        class="inline-block px-3 py-1 rounded-md bg-champagne/15 text-champagne font-mono text-xs font-bold mb-4">STEP
+                        04</span>
+                    <h3 class="font-display text-lg font-semibold text-ivory mb-2">Launch &amp; Staff Training</h3>
+                    <p class="text-sm text-mutedSilver leading-relaxed">We install the software, train your
+                        counter/office staff, and provide reliable ongoing technical support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section id="faq" class="relative z-10 py-24 lg:py-28 border-b border-white/[0.06]">
+        <div class="max-w-4xl mx-auto px-6 lg:px-10">
+            <div class="text-center mb-14 reveal">
+                <p class="text-champagne text-xs font-semibold uppercase tracking-[0.25em] mb-3">06 // Common Questions
+                </p>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-ivory tracking-tight">
+                    Frequently Asked Questions
+                </h2>
+            </div>
+
+            <div class="space-y-4 reveal" id="faq-container">
+                <div class="rounded-2xl bg-charcoal border border-white/[0.08] overflow-hidden">
+                    <button type="button"
+                        class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-semibold text-ivory hover:text-champagne transition-colors">
+                        <span>Can the billing &amp; inventory software work offline without internet?</span>
+                        <span class="faq-icon text-champagne text-xl leading-none">+</span>
+                    </button>
+                    <div
+                        class="faq-content hidden px-6 pb-5 text-sm text-mutedSilver leading-relaxed border-t border-white/[0.05] pt-4">
+                        Yes! Our Windows Desktop &amp; Hybrid POS applications store data securely on your local machine
+                        so your billing counter never stops during internet outages. As soon as internet reconnects, all
+                        invoices and stock updates automatically sync to the cloud and your mobile app.
+                    </div>
+                </div>
+
+                <div class="rounded-2xl bg-charcoal border border-white/[0.08] overflow-hidden">
+                    <button type="button"
+                        class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-semibold text-ivory hover:text-champagne transition-colors">
+                        <span>How affordable is custom software compared to monthly SaaS apps?</span>
+                        <span class="faq-icon text-champagne text-xl leading-none">+</span>
+                    </button>
+                    <div
+                        class="faq-content hidden px-6 pb-5 text-sm text-mutedSilver leading-relaxed border-t border-white/[0.05] pt-4">
+                        We build modular software tailored strictly to the features you actually need—eliminating
+                        bloated license fees. You can choose an affordable one-time ownership model with optional
+                        low-cost annual support, saving significantly over 2–3 years compared to recurring per-user
+                        subscriptions.
+                    </div>
+                </div>
+
+                <div class="rounded-2xl bg-charcoal border border-white/[0.08] overflow-hidden">
+                    <button type="button"
+                        class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-semibold text-ivory hover:text-champagne transition-colors">
+                        <span>Can I check live sales and stock of multiple stores on my phone?</span>
+                        <span class="faq-icon text-champagne text-xl leading-none">+</span>
+                    </button>
+                    <div
+                        class="faq-content hidden px-6 pb-5 text-sm text-mutedSilver leading-relaxed border-t border-white/[0.05] pt-4">
+                        Absolutely. Every multi-store or cloud-connected system includes a dedicated Owner Live
+                        Dashboard (accessible on Android, iOS, or mobile browser) showing branch-wise daily sales, cash
+                        vs. UPI collection, low-stock alerts, and daily closing profit summaries.
+                    </div>
+                </div>
+
+                <div class="rounded-2xl bg-charcoal border border-white/[0.08] overflow-hidden">
+                    <button type="button"
+                        class="faq-toggle w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-display font-semibold text-ivory hover:text-champagne transition-colors">
+                        <span>Do you provide staff training, barcode printer setup, and after-sales support?</span>
+                        <span class="faq-icon text-champagne text-xl leading-none">+</span>
+                    </button>
+                    <div
+                        class="faq-content hidden px-6 pb-5 text-sm text-mutedSilver leading-relaxed border-t border-white/[0.05] pt-4">
+                        Yes. We handle full installation, thermal &amp; A4 invoice template customization, barcode
+                        scanner/printer setup, hands-on training for your billing staff, and priority
+                        WhatsApp/phone/remote technical support.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Consultation & Google Apps Script Contact Section -->
+    <section id="contact" class="relative z-10 py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+
+                <!-- Left Info Column -->
+                <div class="lg:col-span-5 space-y-6 reveal">
+                    <p class="text-champagne text-xs font-semibold uppercase tracking-[0.25em]">07 // Start Your Project
+                    </p>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-ivory tracking-tight">
+                        Tell Us What Software You Need
+                    </h2>
+                    <p class="text-mutedSilver text-base leading-relaxed">
+                        Looking for an affordable website, custom mobile app, Windows offline billing software, or
+                        multi-store inventory system? Submit your details—our system logs your inquiry and emails you an
+                        instant confirmation.
+                    </p>
+
+                    <div class="pt-4 space-y-5 border-t border-white/[0.08]">
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-charcoal border border-white/10 flex items-center justify-center text-champagne shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-xs text-mutedSilver uppercase tracking-wider">Direct Sales &amp;
+                                    Support</div>
+                                <div class="text-ivory font-medium mt-0.5">nurexagroup@gmail.com</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-charcoal border border-white/10 flex items-center justify-center text-champagne shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="text-xs text-mutedSilver uppercase tracking-wider">Instant CRM &amp; Email
+                                    Dispatch</div>
+                                <div class="text-ivory font-medium mt-0.5">Powered by Google Sheets + Apps Script</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Right Interactive Quote Form -->
+                <div class="lg:col-span-7 reveal reveal-delay-1">
+                    <div class="rounded-2xl bg-charcoal border border-white/[0.08] p-8 sm:p-10 shadow-2xl">
+                        <form id="consultation-form" class="space-y-5">
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="fullName"
+                                        class="block text-xs font-medium uppercase tracking-wider text-mutedSilver mb-2">Your
+                                        Name *</label>
+                                    <input type="text" id="fullName" name="fullName" required placeholder="Rahul Sharma"
+                                        class="w-full px-4 py-3.5 rounded-xl bg-deepBlack border border-white/10 text-ivory placeholder-mutedSilver/40 text-sm focus:outline-none focus:border-champagne transition-colors">
+                                </div>
+                                <div>
+                                    <label for="company"
+                                        class="block text-xs font-medium uppercase tracking-wider text-mutedSilver mb-2">Shop
+                                        / Business Name *</label>
+                                    <input type="text" id="company" name="company" required
+                                        placeholder="Sharma Enterprises"
+                                        class="w-full px-4 py-3.5 rounded-xl bg-deepBlack border border-white/10 text-ivory placeholder-mutedSilver/40 text-sm focus:outline-none focus:border-champagne transition-colors">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="phone"
+                                        class="block text-xs font-medium uppercase tracking-wider text-mutedSilver mb-2">Phone
+                                        / WhatsApp Number *</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="+91 98765 43210"
+                                        class="w-full px-4 py-3.5 rounded-xl bg-deepBlack border border-white/10 text-ivory placeholder-mutedSilver/40 text-sm focus:outline-none focus:border-champagne transition-colors">
+                                </div>
+                                <div>
+                                    <label for="email"
+                                        class="block text-xs font-medium uppercase tracking-wider text-mutedSilver mb-2">Email
+                                        Address (For Quote &amp; Receipt) *</label>
+                                    <input type="email" id="email" name="email" required placeholder="rahul@company.com"
+                                        class="w-full px-4 py-3.5 rounded-xl bg-deepBlack border border-white/10 text-ivory placeholder-mutedSilver/40 text-sm focus:outline-none focus:border-champagne transition-colors">
+                                </div>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label for="solutionArea"
+                                        class="block text-xs font-medium uppercase tracking-wider text-mutedSilver mb-2">Software
+                                        Solution Needed</label>
+                                    <select id="solutionArea" name="solutionArea"
+                                        class="w-full px-4 py-3.5 rounded-xl bg-deepBlack border border-white/10 text-ivory text-sm focus:outline-none focus:border-champagne transition-colors">
+                                        <option value="Billing, POS & Inventory Software (Online/Offline)">Billing, POS
+                                            &amp; Inventory (Online/Offline)</option>
+                                        <option value="Multi-Store & Warehouse ERP Software">Multi-Store &amp; Warehouse
+                                            ERP Software</option>
+                                        <option value="Static / Dynamic Business Website">Static / Dynamic Business
+                                            Website</option>
+                                        <option value="Custom Web / Android / iOS / Windows App">Android / iOS Mobile
+                                            App or Web App</option>
+                                        <option value="Windows Desktop Offline Software">Windows Desktop Offline
+                                            Software</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="budget"
+                                        class="block text-xs font-medium uppercase tracking-wider text-mutedSilver mb-2">Estimated
+                                        Budget Range</label>
+                                    <select id="budget" name="budget"
+                                        class="w-full px-4 py-3.5 rounded-xl bg-deepBlack border border-white/10 text-ivory text-sm focus:outline-none focus:border-champagne transition-colors">
+                                        <option value="Starter / Budget-Friendly">Starter / Budget-Friendly</option>
+                                        <option value="Standard Business Package">Standard Business Package</option>
+                                        <option value="Multi-Store / Custom Enterprise">Multi-Store / Custom Enterprise
+                                        </option>
+                                        <option value="Need Free Consultation First">Need Free Consultation First
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="projectScope"
+                                    class="block text-xs font-medium uppercase tracking-wider text-mutedSilver mb-2">Your
+                                    Requirements (Features, Branches, Online/Offline) *</label>
+                                <textarea id="projectScope" name="projectScope" rows="3" required
+                                    placeholder="Example: I run 2 retail stores and need GST billing, barcode printing, stock tracking, and mobile reports..."
+                                    class="w-full px-4 py-3.5 rounded-xl bg-deepBlack border border-white/10 text-ivory placeholder-mutedSilver/40 text-sm focus:outline-none focus:border-champagne transition-colors resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" id="submit-btn"
+                                class="w-full py-4 px-6 rounded-xl bg-champagne text-deepBlack font-display font-semibold text-sm uppercase tracking-wider hover:bg-ivory transition-all duration-300 shadow-lg shadow-champagne/10 flex items-center justify-center gap-2.5">
+                                <span id="submit-btn-text">Send Inquiry &amp; Get Free Quote</span>
+                                <svg id="submit-spinner" class="hidden w-4 h-4 animate-spin text-deepBlack" fill="none"
+                                    viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                        stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                                </svg>
+                            </button>
+
+                            <!-- Custom Inline Feedback Banner -->
+                            <div id="form-feedback"
+                                class="hidden rounded-xl bg-deepBlack border border-champagne/40 p-4 text-sm text-ivory flex items-start gap-3">
+                                <svg class="w-5 h-5 text-champagne shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <div>
+                                    <p id="feedback-title" class="font-semibold text-champagne">Inquiry Saved &amp;
+                                        Confirmation Email Sent</p>
+                                    <p id="feedback-text" class="text-xs text-mutedSilver mt-1 leading-relaxed"></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Collapsible Google Apps Script Code.gs Drawer -->
+            <div id="gas-guide-panel"
+                class="hidden mt-12 rounded-2xl bg-charcoal border border-champagne/35 p-6 sm:p-8 shadow-2xl">
+                <div
+                    class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-white/[0.08]">
+                    <div>
+                        <span class="text-xs font-mono text-champagne uppercase tracking-widest">Google Sheets + Gmail
+                            Automation</span>
+                        <h3 class="font-display text-xl font-bold text-ivory mt-1">Ready-to-Use Google Apps Script
+                            (Code.gs)</h3>
+                        <p class="text-xs text-mutedSilver mt-1">
+                            1. Open a Google Sheet &rarr; <strong>Extensions &rarr; Apps Script</strong> &rarr; Paste
+                            this code &rarr; <strong>Deploy &rarr; New Deployment &rarr; Web App (Anyone)</strong>
+                            &rarr; Paste the Web App URL into <code class="text-champagne">GAS_WEB_APP_URL</code> in
+                            this HTML file.
+                        </p>
+                    </div>
+                    <button type="button" id="copy-gas-btn"
+                        class="shrink-0 px-4 py-2.5 rounded-xl bg-champagne text-deepBlack font-display font-semibold text-xs uppercase tracking-wider hover:bg-ivory transition-colors">
+                        Copy Script Code
+                    </button>
+                </div>
+
+                <pre id="gas-code-block"
+                    class="mt-5 p-5 rounded-xl bg-deepBlack border border-white/[0.07] text-xs font-mono text-ivory/90 overflow-x-auto leading-relaxed"><code>// ============================================================================
+// NUREXA GROUP - GOOGLE APPS SCRIPT (SAVES TO GOOGLE SHEET + SENDS EMAILS)
+// ============================================================================
+const OWNER_EMAIL = "nurexagroup@gmail.com"; // <-- Replace with your Gmail/Workspace email
+const SHEET_NAME  = "Leads";
+
+function doPost(e) {
+  try {
+    // Parse incoming JSON or Form data
+    const data = e.postData && e.postData.contents
+      ? JSON.parse(e.postData.contents)
+      : e.parameter;
+
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+    let sheet = ss.getSheetByName(SHEET_NAME);
+
+    // Auto-create "Leads" tab with styled headers if it doesn't exist
+    if (!sheet) {
+      sheet = ss.insertSheet(SHEET_NAME);
+      sheet.appendRow([
+        "Timestamp", "Full Name", "Business Name", "Phone / WhatsApp",
+        "Email", "Software Solution", "Budget Range", "Requirements", "Status"
+      ]);
+      sheet.getRange(1, 1, 1, 9).setFontWeight("bold").setBackground("#121215").setFontColor("#E6CB97");
+      sheet.setFrozenRows(1);
+    }
+
+    const timestamp = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
+
+    // 1. Save Lead Row to Google Sheet
+    sheet.appendRow([
+      timestamp,
+      data.fullName || "",
+      data.company || "",
+      data.phone || "",
+      data.email || "",
+      data.solutionArea || "",
+      data.budget || "",
+      data.projectScope || "",
+      "New Lead"
+    ]);
+
+    // 2. Send Instant Notification Email to NUREXA Owner
+    const ownerSubject = "New Software Lead: " + (data.company || data.fullName) + " (" + (data.solutionArea || "Custom Software") + ")";
+    const ownerHtml = `
+      <div style="font-family:Arial,sans-serif;background:#09090B;color:#FAF8F5;padding:24px;border-radius:12px;">
+        <h2 style="color:#E6CB97;margin-top:0;">NUREXA Group — New Client Inquiry</h2>
+        <p><strong>Date/Time:</strong> ${timestamp}</p>
+        <p><strong>Client Name:</strong> ${data.fullName}</p>
+        <p><strong>Business Name:</strong> ${data.company}</p>
+        <p><strong>Phone / WhatsApp:</strong> ${data.phone}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Solution Needed:</strong> ${data.solutionArea}</p>
+        <p><strong>Budget Range:</strong> ${data.budget}</p>
+        <p><strong>Requirements:</strong><br/>${data.projectScope}</p>
+      </div>
+    `;
+    MailApp.sendEmail({
+      to: OWNER_EMAIL,
+      subject: ownerSubject,
+      htmlBody: ownerHtml
+    });
+
+    // 3. Send Automated Confirmation Email to Client
+    if (data.email) {
+      const clientSubject = "We Received Your Software Inquiry — NUREXA Group";
+      const clientHtml = `
+        <div style="font-family:Arial,sans-serif;background:#121215;color:#FAF8F5;padding:28px;border-radius:12px;border:1px solid #E6CB97;">
+          <h2 style="color:#E6CB97;margin-top:0;">Thank You, ${data.fullName}!</h2>
+          <p>We have received your inquiry for <strong>${data.company}</strong> regarding <strong>${data.solutionArea}</strong>.</p>
+          <p>Our NUREXA Group solutions architect is reviewing your requirements and will contact you within <strong>24 hours</strong> with a tailored quote and free live demo.</p>
+          <hr style="border-color:#2A2A32;margin:20px 0;"/>
+          <p style="font-size:12px;color:#9A9893;">NUREXA Group • Custom Websites, Mobile Apps, Windows Offline Software &amp; Multi-Store Billing Systems</p>
+        </div>
+      `;
+      MailApp.sendEmail({
+        to: data.email,
+        subject: clientSubject,
+        htmlBody: clientHtml
+      });
+    }
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: "success", message: "Lead saved and emails sent." }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (err) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: "error", message: err.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Minimal Corporate Footer -->
+    <footer class="relative z-10 bg-charcoal border-t border-white/[0.08] py-14">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+            <div
+                class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-white/[0.07]">
+
+                <!-- Footer Brand Logo (Option 3 SVG) -->
+                <a href="#" class="flex items-center gap-3.5 group">
+                    <svg class="w-9 h-10 shrink-0" viewBox="0 0 100 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 22 L12 96 L32 80 L32 54 L66 86 L66 36 L80 24 L80 96 L90 104 L90 10 L56 38 L56 64 L22 32 L22 74 L12 82 Z"
+                            fill="#E6CB97" />
+                        <path d="M26 14 L52 38 L52 50 L26 26 Z" fill="#E6CB97" />
+                    </svg>
+                    <div class="flex flex-col justify-center">
+                        <span class="font-logo text-ivory text-base tracking-[0.14em] leading-none font-bold">
+                            NUREXA
+                        </span>
+                        <span
+                            class="font-logo text-champagne text-[9px] tracking-[0.46em] leading-none mt-1.5 pl-0.5 font-semibold">
+                            GROUP
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Footer Quick Navigation -->
+                <div class="flex flex-wrap gap-8 text-xs uppercase tracking-widest text-mutedSilver">
+                    <a href="#services" class="hover:text-champagne transition-colors">Solutions</a>
+                    <a href="#industries" class="hover:text-champagne transition-colors">Industries</a>
+                    <a href="#why-software" class="hover:text-champagne transition-colors">Why Custom</a>
+                    <a href="#solutions" class="hover:text-champagne transition-colors">Packages</a>
+                    <a href="#faq" class="hover:text-champagne transition-colors">FAQ</a>
+                    <a href="#contact" class="hover:text-champagne transition-colors">Contact</a>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-mutedSilver">
+                <p>&copy; 2026 NUREXA Group. Custom Websites, Mobile Apps, Windows Offline Software &amp; Multi-Store
+                    Billing Systems.</p>
+                <div class="flex flex-wrap items-center justify-center gap-6">
+                    <button type="button" data-legal-tab="privacy"
+                        class="open-legal-btn hover:text-champagne transition-colors focus:outline-none">Privacy
+                        Policy</button>
+                    <button type="button" data-legal-tab="terms"
+                        class="open-legal-btn hover:text-champagne transition-colors focus:outline-none">Terms of
+                        Service</button>
+                    <button type="button" data-legal-tab="refund"
+                        class="open-legal-btn hover:text-champagne transition-colors focus:outline-none">Refund
+                        Policy</button>
+                    <button type="button" data-legal-tab="sla"
+                        class="open-legal-btn hover:text-champagne transition-colors focus:outline-none">Support &amp;
+                        SLA</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Luxury Dark-Gold Corporate Legal Modal Viewer -->
+    <div id="legal-modal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 bg-deepBlack/85 backdrop-blur-md"
+        role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
+        <div
+            class="relative w-full max-w-4xl max-h-[88vh] flex flex-col rounded-2xl bg-charcoal border border-champagne/35 shadow-2xl overflow-hidden">
+
+            <!-- Modal Header -->
+            <div
+                class="px-6 py-5 bg-deepBlack border-b border-white/[0.08] flex items-center justify-between gap-4 shrink-0">
+                <div class="flex items-center gap-3">
+                    <span class="w-2 h-2 rounded-full bg-champagne"></span>
+                    <div>
+                        <span class="text-[10px] font-mono uppercase tracking-[0.25em] text-champagne block">NUREXA
+                            Group Corporate Governance</span>
+                        <h3 id="legal-modal-title" class="font-display text-lg sm:text-xl font-bold text-ivory">Legal
+                            &amp; Compliance Policies</h3>
+                    </div>
+                </div>
+                <button type="button" id="close-legal-modal"
+                    class="p-2 rounded-lg bg-charcoal border border-white/10 text-mutedSilver hover:text-ivory hover:border-champagne/50 transition-colors focus:outline-none"
+                    aria-label="Close Legal Modal">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Policy Navigation Tabs -->
+            <div class="px-6 py-3 bg-charcoalLight/60 border-b border-white/[0.07] flex flex-wrap gap-2 shrink-0"
+                id="legal-tabs-bar">
+                <button type="button" data-tab="privacy"
+                    class="legal-tab-btn px-4 py-2 rounded-lg text-xs font-display font-semibold uppercase tracking-wider transition-all bg-champagne text-deepBlack">
+                    Privacy Policy
+                </button>
+                <button type="button" data-tab="terms"
+                    class="legal-tab-btn px-4 py-2 rounded-lg text-xs font-display font-semibold uppercase tracking-wider transition-all bg-deepBlack text-mutedSilver hover:text-ivory border border-white/10">
+                    Terms of Service
+                </button>
+                <button type="button" data-tab="refund"
+                    class="legal-tab-btn px-4 py-2 rounded-lg text-xs font-display font-semibold uppercase tracking-wider transition-all bg-deepBlack text-mutedSilver hover:text-ivory border border-white/10">
+                    Refund &amp; Cancellation
+                </button>
+                <button type="button" data-tab="sla"
+                    class="legal-tab-btn px-4 py-2 rounded-lg text-xs font-display font-semibold uppercase tracking-wider transition-all bg-deepBlack text-mutedSilver hover:text-ivory border border-white/10">
+                    Support &amp; SLA
+                </button>
+            </div>
+
+            <!-- Scrollable Document Content Area -->
+            <div class="p-6 sm:p-8 overflow-y-auto space-y-6 text-sm text-mutedSilver leading-relaxed"
+                id="legal-modal-body">
+
+                <!-- 1. Privacy Policy -->
+                <div id="legal-content-privacy" class="legal-pane space-y-5">
+                    <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-white/[0.07]">
+                        <h4 class="font-display text-xl font-bold text-ivory">1. Privacy Policy &amp; Data Protection
+                        </h4>
+                        <span class="text-xs font-mono text-champagne">Effective: November 2026</span>
+                    </div>
+                    <p>
+                        At <strong class="text-ivory">NUREXA Group</strong>, we treat your business records, customer
+                        databases, and inquiry details with strict enterprise confidentiality. This Privacy Policy
+                        explains how we collect, store, and safeguard information when you visit our website or deploy
+                        our custom software solutions.
+                    </p>
+                    <div class="space-y-2">
+                        <h5 class="font-display font-semibold text-ivory">1.1 Information We Collect</h5>
+                        <p>When you submit a quote or demo request via our website, we collect your name, business/shop
+                            name, phone/WhatsApp number, email address, software category, budget preference, and
+                            project scope notes.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h5 class="font-display font-semibold text-ivory">1.2 Google Sheets CRM &amp; Email Dispatch
+                        </h5>
+                        <p>Inquiry submissions are securely transmitted via encrypted HTTPS to our private Google
+                            Workspace environment (Google Sheets &amp; Google Apps Script) strictly for generating your
+                            project quote, scheduling demos, and sending automated email confirmations.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h5 class="font-display font-semibold text-ivory">1.3 Client Business &amp; POS Data
+                            Confidentiality</h5>
+                        <p>For all custom billing, inventory, ERP, web, and mobile applications developed by NUREXA
+                            Group, <strong class="text-champagne">100% of your sales, GST, customer, and stock records
+                                belong exclusively to you</strong>. Offline desktop databases remain on your local
+                            machine, and cloud-synced databases are encrypted in transit and at rest.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h5 class="font-display font-semibold text-ivory">1.4 Zero Third-Party Resale &amp; Deletion
+                            Rights</h5>
+                        <p>We never sell, rent, or trade client contact information or business analytics to third-party
+                            marketers. You may request access to, correction of, or permanent deletion of your inquiry
+                            data at any time by emailing <span class="text-champagne">nurexagroup@gmail.com</span>.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Terms of Service -->
+                <div id="legal-content-terms" class="legal-pane hidden space-y-5">
+                    <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-white/[0.07]">
+                        <h4 class="font-display text-xl font-bold text-ivory">2. Master Terms of Service</h4>
+                        <span class="text-xs font-mono text-champagne">Effective: November 2026</span>
+                    </div>
+                    <p>
+                        These Terms of Service govern all custom software development, static/dynamic website creation,
+                        Android/iOS mobile app engineering, Windows offline desktop software, and multi-store POS/ERP
+                        deployments delivered by <strong class="text-ivory">NUREXA Group</strong>.
+                    </p>
+                    <div class="space-y-2">
+                        <h5 class="font-display font-semibold text-ivory">2.1 Project Scope &amp; Milestone Delivery
+                        </h5>
+                        <p>Every engagement begins with an approved Feature Specification &amp; Proposal outlining
+                            deliverables, timeline, and fixed pricing. Development proceeds across transparent
+                            milestones (UI Prototype &rarr; Core Build &rarr; Testing &rarr; Deployment &amp; Training).
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <h5 class="font-display font-semibold text-ivory">2.2 Intellectual Property &amp; Software
+                            Ownership</h5>
+                        <p>Upon receipt of full and final project payment, NUREXA Group transfers perpetual usage
+                            rights—and where contracted under bespoke source-code plans, full custom source code and
+                            database ownership—to the client. Reusable internal framework libraries remain licensed
+                            perpetually for your business operations.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h5 class="font-display font-semibold text-ivory">2.3 Client Revisions &amp; Change Requests
+                        </h5>
+                        <p>Each project includes up to two (2) structured design and workflow revision rounds prior to
+                            final sign-off. Additional modules or post-approval feature expansions are quoted
+                            transparently as separate add-on milestones.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h5 class="font-display font-semibold text-ivory">2.4 90-Day Post-Launch Bug-Fix Warranty</h5>
+                        <p>All custom software and websites include a complimentary <strong
+                                class="text-champagne">90-day post-launch warranty</strong> covering resolution of any
+                            coding defects or functional discrepancies against the approved specification.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h5 class="font-display font-semibold text-ivory">2.5 Third-Party Services &amp; Limitation of
+                            Liability</h5>
+                        <p>External costs such as domain registration, cloud hosting, SSL certificates, Google Play /
+                            Apple App Store developer fees, SMS/WhatsApp API credits, and payment gateway charges are
+                            billed directly at actual provider rates. NUREXA Group's aggregate liability shall not
+                            exceed the total fees paid for the specific service milestone.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Refund & Cancellation Policy -->
+                <div id="legal-content-refund" class="legal-pane hidden space-y-5">
+                    <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-white/[0.07]">
+                        <h4 class="font-display text-xl font-bold text-ivory">3. Refund &amp; Cancellation Policy</h4>
+                        <span class="text-xs font-mono text-champagne">Effective: November 2026</span>
+                    </div>
+                    <p>
+                        Because custom software and websites are engineered specifically for each client's business
+                        operations, <strong class="text-ivory">NUREXA Group</strong> follows a fair, milestone-based
+                        billing and cancellation policy.
+                    </p>
+                    <div class="space-y-2">
+                        <h5 class="font-display font-semibold text-ivory">3.1 Initial Kickoff &amp; Architecture Deposit
+                        </h5>
+                        <p>Projects commence upon payment of an agreed kickoff advance (typically 30%–40% of total
+                            project value) which covers UI/UX wireframing, database architecture, and dedicated
+                            engineering allocation.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h5 class="font-display font-semibold text-ivory">3.2 Cancellation Prior to Development</h5>
+                        <p>If a client cancels within 48 hours of advance payment and before architecture or design work
+                            has commenced, a full refund minus payment gateway processing charges will be issued within
+                            7 business days.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h5 class="font-display font-semibold text-ivory">3.3 Milestone-Based Cancellations</h5>
+                        <p>Once UI prototypes, coding, or software configuration milestones have been delivered or
+                            demonstrated, payments corresponding to completed engineering hours and approved milestones
+                            are non-refundable. Any unutilized balance for future unstarted milestones will be refunded
+                            promptly upon written cancellation notice.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Support & SLA Policy -->
+                <div id="legal-content-sla" class="legal-pane hidden space-y-5">
+                    <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-white/[0.07]">
+                        <h4 class="font-display text-xl font-bold text-ivory">4. Support &amp; Service Level Agreement
+                            (SLA)</h4>
+                        <span class="text-xs font-mono text-champagne">Effective: November 2026</span>
+                    </div>
+                    <p>
+                        We understand that retail counters, pharmacies, restaurants, and multi-store businesses rely on
+                        uninterrupted billing and inventory operations. Our support SLA ensures rapid response times.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-deepBlack border border-white/[0.07]">
+                            <span class="text-xs font-mono text-champagne uppercase">Critical Counter / Billing
+                                Issue</span>
+                            <div class="font-display text-lg font-bold text-ivory mt-1">&lt; 2 Hours Response</div>
+                            <p class="text-xs text-mutedSilver mt-1">Priority remote desktop, phone, and WhatsApp
+                                assistance for active billing interruptions.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-deepBlack border border-white/[0.07]">
+                            <span class="text-xs font-mono text-champagne uppercase">General Queries &amp; Report
+                                Tweaks</span>
+                            <div class="font-display text-lg font-bold text-ivory mt-1">&lt; 24 Hours Resolution</div>
+                            <p class="text-xs text-mutedSilver mt-1">Invoice format adjustments, printer configuration,
+                                and staff refresher training.</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <h5 class="font-display font-semibold text-ivory">4.1 Optional Annual Maintenance Contract (AMC)
+                        </h5>
+                        <p>After your complimentary 90-day post-launch warranty, you may opt into an affordable Annual
+                            Maintenance Contract (AMC) covering OS/browser compatibility updates, automated cloud backup
+                            health checks, GST tax-slab updates, and priority technical support.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div
+                class="px-6 py-4 bg-deepBlack border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
+                <span class="text-xs text-mutedSilver">Questions regarding compliance or custom agreements? Contact
+                    <span class="text-champagne">nurexagroup@gmail.com</span></span>
+                <button type="button" id="close-legal-modal-bottom"
+                    class="px-5 py-2 rounded-lg bg-champagne text-deepBlack font-display font-semibold text-xs uppercase tracking-wider hover:bg-ivory transition-colors">
+                    Close Document
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Navigation, Industry Tabs, FAQ, Legal Modal, Scroll-Reveal & Google Apps Script Form Integration -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Replace with your deployed Google Apps Script Web App URL
+            const GAS_WEB_APP_URL = "";
+
+            // 1. Mobile Navigation Drawer Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+                });
+            }
+
+            // 2. Scroll Reveal & Animated KPI Counters
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            const counters = document.querySelectorAll('.kpi-counter');
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'), 10) || 0;
+                        const duration = 1200;
+                        const startTime = performance.now();
+
+                        function updateCounter(now) {
+                            const elapsed = now - startTime;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            counter.textContent = Math.round(eased * target);
+                            if (progress < 1) {
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        }
+                        requestAnimationFrame(updateCounter);
+                        counterObserver.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.3 });
+            counters.forEach(c => counterObserver.observe(c));
+
+            // 3. Industry-Specific Interactive Showcase Tabs
+            const industryData = {
+                retail: {
+                    badge: "RETAIL & SUPERMARKET EDITION",
+                    title: "High-Speed Barcode Billing, Loyalty Points & Multi-Counter POS",
+                    desc: "Handle peak evening queues effortlessly with 3-second barcode scanning, weighing scale integration, combo offers, customer khata management, and live godown-to-shelf stock replenishment.",
+                    platform: "Windows Offline + Android Owner App",
+                    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80",
+                    features: [
+                        "Instant Barcode Label & Thermal Print",
+                        "Split UPI / Cash / Card Checkout",
+                        "Auto Low-Stock & Dead-Stock Alerts",
+                        "Customer Loyalty & WhatsApp Bills"
+                    ]
+                },
+                pharmacy: {
+                    badge: "MEDICAL & PHARMACY EDITION",
+                    title: "Batch-Wise Expiry Tracking, Salt Search & GST Billing",
+                    desc: "Never lose money on expired medicines. Track batch numbers, near-expiry alerts 90 days in advance, doctor prescription records, and instant generic salt substitute lookup.",
+                    platform: "Windows Desktop + Cloud Backup",
+                    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=900&q=80",
+                    features: [
+                        "Batch & Expiry Date Auto-Alerts",
+                        "Generic Salt & Substitute Finder",
+                        "Schedule H1 / Narcotics Compliance",
+                        "Distributor Purchase & Margin Audit"
+                    ]
+                },
+                restaurant: {
+                    badge: "RESTAURANT, CAFE & CLOUD KITCHEN",
+                    title: "Table Management, Kitchen KOT & Zomato/Swiggy Sync",
+                    desc: "Speed up table turnover with captain mobile ordering, instant kitchen order tickets (KOT), recipe-level raw material deduction, and unified dine-in/takeaway billing.",
+                    platform: "POS Touch + Android Captain App",
+                    image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80",
+                    features: [
+                        "1-Tap Table & Captain KOT Ordering",
+                        "Recipe & Kitchen Raw Stock Tracking",
+                        "Split Bill & Combo Menu Management",
+                        "Daily Food Cost & Wastage Reports"
+                    ]
+                },
+                salon: {
+                    badge: "SALONS, CLINICS & SERVICE CENTERS",
+                    title: "Smart Appointment Booking, Membership Packages & Staff Commission",
+                    desc: "Eliminate double-bookings with automated WhatsApp appointment reminders, prepaid service packages, staff commission tracking, and digital service history.",
+                    platform: "Web App + Android/iOS Client App",
+                    image: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=80",
+                    features: [
+                        "Online & Walk-In Slot Calendar",
+                        "Automated WhatsApp Reminders",
+                        "Prepaid Packages & Wallet Credits",
+                        "Staff Attendance & Commission Calc"
+                    ]
+                },
+                wholesale: {
+                    badge: "WHOLESALE, DISTRIBUTION & MANUFACTURING",
+                    title: "B2B Credit Ledger, Salesman Order App & Multi-Godown ERP",
+                    desc: "Empower field salesmen to book orders on mobile with live godown stock visibility, party-wise rate slabs, e-Way bill generation, and automated payment due follow-ups.",
+                    platform: "Multi-Store Web ERP + Field Mobile App",
+                    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80",
+                    features: [
+                        "Party-Wise Rate Slabs & Credit Limits",
+                        "Field Salesman Mobile Order Booking",
+                        "Multi-Warehouse Stock Transfer",
+                        "GST Filing & Aging Receivable Reports"
+                    ]
+                }
+            };
+
+            const industryTabs = document.querySelectorAll('.industry-tab');
+            const indBadge = document.getElementById('ind-badge');
+            const indTitle = document.getElementById('ind-title');
+            const indDesc = document.getElementById('ind-desc');
+            const indFeatures = document.getElementById('ind-features');
+            const indImage = document.getElementById('ind-image');
+            const indPlatform = document.getElementById('ind-platform');
+
+            industryTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const key = tab.getAttribute('data-industry');
+                    const data = industryData[key];
+                    if (!data) return;
+
+                    industryTabs.forEach(t => {
+                        t.classList.remove('active', 'bg-champagne', 'text-deepBlack');
+                        t.classList.add('bg-charcoal', 'border', 'border-white/10', 'text-mutedSilver');
+                    });
+                    tab.classList.remove('bg-charcoal', 'border', 'border-white/10', 'text-mutedSilver');
+                    tab.classList.add('active', 'bg-champagne', 'text-deepBlack');
+
+                    if (indBadge) indBadge.textContent = data.badge;
+                    if (indTitle) indTitle.textContent = data.title;
+                    if (indDesc) indDesc.textContent = data.desc;
+                    if (indPlatform) indPlatform.textContent = data.platform;
+                    if (indImage) indImage.src = data.image;
+                    if (indFeatures) {
+                        indFeatures.innerHTML = data.features.map(item => `
+                            <div class="flex items-center gap-2.5 text-sm text-ivory/90 bg-charcoal/80 p-3 rounded-xl border border-white/[0.05]">
+                                <span class="text-champagne font-bold">✓</span> ${item}
+                            </div>
+                        `).join('');
+                    }
+                });
+            });
+
+            // 4. Package Plan Pre-Selection into Contact Form
+            const selectPlanBtns = document.querySelectorAll('.select-plan-btn');
+            const solutionSelect = document.getElementById('solutionArea');
+            const contactSection = document.getElementById('contact');
+            selectPlanBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const plan = btn.getAttribute('data-plan');
+                    if (solutionSelect && plan) {
+                        solutionSelect.value = plan;
+                    }
+                    if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // 5. FAQ Accordion Toggle
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    const icon = toggle.querySelector('.faq-icon');
+                    const isHidden = content.classList.contains('hidden');
+
+                    document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+                    document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+
+                    if (isHidden) {
+                        content.classList.remove('hidden');
+                        if (icon) icon.textContent = '−';
+                    }
+                });
+            });
+
+            // 6. Google Apps Script Backend Code Drawer & Copy Utility
+            const toggleGasBtn = document.getElementById('toggle-gas-guide');
+            const gasPanel = document.getElementById('gas-guide-panel');
+            const gasArrow = document.getElementById('gas-arrow');
+            const copyGasBtn = document.getElementById('copy-gas-btn');
+            const gasCodeBlock = document.getElementById('gas-code-block');
+
+            if (toggleGasBtn && gasPanel) {
+                toggleGasBtn.addEventListener('click', () => {
+                    const isHidden = gasPanel.classList.toggle('hidden');
+                    if (gasArrow) gasArrow.textContent = isHidden ? '+' : '−';
+                });
+            }
+
+            if (copyGasBtn && gasCodeBlock) {
+                copyGasBtn.addEventListener('click', () => {
+                    const textArea = document.createElement('textarea');
+                    textArea.value = gasCodeBlock.textContent;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    try {
+                        document.execCommand('copy');
+                        copyGasBtn.textContent = 'Copied to Clipboard!';
+                        setTimeout(() => {
+                            copyGasBtn.textContent = 'Copy Script Code';
+                        }, 2500);
+                    } catch (err) {
+                        copyGasBtn.textContent = 'Select & Copy Manually';
+                    }
+                    document.body.removeChild(textArea);
+                });
+            }
+
+            // 7. Contact Form Submission via Google Apps Script
+            const form = document.getElementById('consultation-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const submitBtnText = document.getElementById('submit-btn-text');
+            const submitSpinner = document.getElementById('submit-spinner');
+            const feedbackBanner = document.getElementById('form-feedback');
+            const feedbackTitle = document.getElementById('feedback-title');
+            const feedbackText = document.getElementById('feedback-text');
+
+            if (form) {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    if (submitBtn) submitBtn.disabled = true;
+                    if (submitBtnText) submitBtnText.textContent = "Dispatching Inquiry...";
+                    if (submitSpinner) submitSpinner.classList.remove('hidden');
+
+                    const payload = {
+                        fullName: document.getElementById('fullName').value.trim(),
+                        company: document.getElementById('company').value.trim(),
+                        phone: document.getElementById('phone').value.trim(),
+                        email: document.getElementById('email').value.trim(),
+                        solutionArea: document.getElementById('solutionArea').value,
+                        budget: document.getElementById('budget').value,
+                        projectScope: document.getElementById('projectScope').value.trim()
+                    };
+
+                    try {
+                        if (GAS_WEB_APP_URL) {
+                            await fetch(GAS_WEB_APP_URL, {
+                                method: 'POST',
+                                mode: 'no-cors',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify(payload)
+                            });
+                            if (feedbackTitle) feedbackTitle.textContent = "Inquiry Saved & Confirmation Email Sent";
+                            if (feedbackText) feedbackText.textContent = `Thank you, ${payload.fullName}! Your requirements for ${payload.company} have been recorded in our CRM and an email confirmation has been dispatched to ${payload.email}.`;
+                        } else {
+                            await new Promise(resolve => setTimeout(resolve, 650));
+                            if (feedbackTitle) feedbackTitle.textContent = "Inquiry Ready (Demo Mode)";
+                            if (feedbackText) feedbackText.textContent = `Thank you, ${payload.fullName}! To automatically log leads into Google Sheets and trigger emails, paste your deployed Web App URL into GAS_WEB_APP_URL.`;
+                        }
+
+                        if (feedbackBanner) feedbackBanner.classList.remove('hidden');
+                        form.reset();
+                    } catch (error) {
+                        if (feedbackTitle) feedbackTitle.textContent = "Submission Notice";
+                        if (feedbackText) feedbackText.textContent = "Please verify your network connection or Google Apps Script deployment permissions and try again.";
+                        if (feedbackBanner) feedbackBanner.classList.remove('hidden');
+                    } finally {
+                        if (submitBtn) submitBtn.disabled = false;
+                        if (submitBtnText) submitBtnText.textContent = "Send Inquiry & Get Free Quote";
+                        if (submitSpinner) submitSpinner.classList.add('hidden');
+                    }
+                });
+            }
+
+            // 8. Corporate Legal & Policy Modal Viewer
+            const legalModal = document.getElementById('legal-modal');
+            const openLegalBtns = document.querySelectorAll('.open-legal-btn');
+            const closeLegalBtnTop = document.getElementById('close-legal-modal');
+            const closeLegalBtnBottom = document.getElementById('close-legal-modal-bottom');
+            const legalTabBtns = document.querySelectorAll('.legal-tab-btn');
+            const legalPanes = document.querySelectorAll('.legal-pane');
+            const legalModalBody = document.getElementById('legal-modal-body');
+
+            function switchLegalTab(tabKey) {
+                legalTabBtns.forEach(btn => {
+                    if (btn.getAttribute('data-tab') === tabKey) {
+                        btn.classList.remove('bg-deepBlack', 'text-mutedSilver', 'border', 'border-white/10');
+                        btn.classList.add('bg-champagne', 'text-deepBlack');
+                    } else {
+                        btn.classList.remove('bg-champagne', 'text-deepBlack');
+                        btn.classList.add('bg-deepBlack', 'text-mutedSilver', 'border', 'border-white/10');
+                    }
+                });
+
+                legalPanes.forEach(pane => {
+                    if (pane.id === `legal-content-${tabKey}`) {
+                        pane.classList.remove('hidden');
+                    } else {
+                        pane.classList.add('hidden');
+                    }
+                });
+
+                if (legalModalBody) {
+                    legalModalBody.scrollTop = 0;
+                }
+            }
+
+            function openLegalModal(tabKey = 'privacy') {
+                if (!legalModal) return;
+                switchLegalTab(tabKey);
+                legalModal.classList.remove('hidden');
+                legalModal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLegalModal() {
+                if (!legalModal) return;
+                legalModal.classList.add('hidden');
+                legalModal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+
+            openLegalBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tab = btn.getAttribute('data-legal-tab') || 'privacy';
+                    openLegalModal(tab);
+                });
+            });
+
+            legalTabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tab = btn.getAttribute('data-tab');
+                    switchLegalTab(tab);
+                });
+            });
+
+            if (closeLegalBtnTop) closeLegalBtnTop.addEventListener('click', closeLegalModal);
+            if (closeLegalBtnBottom) closeLegalBtnBottom.addEventListener('click', closeLegalModal);
+
+            if (legalModal) {
+                legalModal.addEventListener('click', (e) => {
+                    if (e.target === legalModal) closeLegalModal();
+                });
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && legalModal && !legalModal.classList.contains('hidden')) {
+                    closeLegalModal();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
